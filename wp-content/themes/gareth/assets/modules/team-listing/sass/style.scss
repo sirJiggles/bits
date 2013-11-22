@@ -1,0 +1,226 @@
+/* styles for the team listing */
+
+.team-listing{
+
+	@include block-left;
+	width:100%;
+	padding:14px 0 0 0;
+	
+	h3{
+		@include block-left;
+		width:100%;
+		font-weight: 700;
+		color:$color3;
+		line-height: 1.8em;
+		font-size: 1.8em;
+		margin:0;
+		padding:0 0 15px 0;
+		@include custom-font;
+	}
+
+	ul{
+		list-style-type:none;
+		@include reset-box;
+		@include block-left;
+		width:100%;
+
+		li{
+			@include block-left;
+			width:100%;
+			margin:0;
+			padding:0 0 20px 0;
+
+			article{
+				@include block-left;
+				width:100%;
+				position:relative;
+
+				&.open{
+					.team-right{
+						header{
+							border-bottom:1px solid #dadada;
+							padding:0 0 10px 0;
+							min-height:135px;
+						}
+					}
+				}
+
+				.team-right{
+
+					@include block-left;
+					width:65%;
+					padding:15px 25px 15px 25px;
+					border:1px solid #ccc;
+					@include radial-bg(white, #f8f8f8, 60%, 100%);
+
+
+					header{
+						@include block-left;
+						width:100%;
+						min-height:120px;
+						
+						h1,
+						.role,
+						.email,
+						.tel{
+							@include block-left;
+							width:100%;
+							@include custom-font;
+							color:$color3;
+							font-size: 1.4em;
+							line-height: 1.4em;
+							@include reset-box;
+						}
+
+						h1{
+							font-size:1.8em;
+							line-height:1.8em;
+							font-weight: 700;
+						}
+
+						.role{
+							padding:0 0 30px 0;
+						}
+
+						.email{
+							color:$color1;
+						}
+
+						.email,
+						.tel{
+							font-weight: 600;
+						}
+
+						a{
+							&:hover{
+								text-decoration: underline;
+							}
+						}
+
+					} //end header
+				} // end the team right
+
+				figure{
+					@include block-left;
+					width:35%;
+
+					img{
+						width:100%;
+						height:auto;
+						display:block;
+						border:1px solid #ccc;
+					}
+				}
+
+				.bio-wrapper{
+					@include no-border-box;
+					@include block-left;
+					display:none;
+					width:100%;
+
+					*{
+						@include no-border-box;
+					}
+
+					h2{
+						width:100%;
+						@include block-left;
+						font-size:1.8em;
+						line-height: 1.8em;
+						font-weight: 700;
+						color:$color3;
+						@include custom-font;
+						padding:10px 0 5px 0;
+						margin:0;
+					}
+
+					p{
+						color:$color2;
+						font-size: 1.4em;
+						line-height: 1.4em;
+						@include custom-font;
+						@include block-left;
+						width:100%;
+					}
+				}
+
+				a.more{
+					position:absolute;
+					bottom:15px;
+					right:25px;
+					color:$color3;
+					@include custom-font;
+					font-weight: 700;
+					font-size:1.4em;
+					line-height: 1.4em;
+					@include transition-property('color');
+					@include transition-duration('0.5s');
+
+					&:hover{
+						text-decoration: none;
+						color:$color1;
+					}
+				}
+
+			
+
+			} //end article
+
+		} // end li
+
+	}// end ul
+
+} // end default styles for the team listing module
+
+
+@media only screen and (max-width:$mobile){
+	.team-listing{
+		ul{
+			li{
+				article{
+					.team-right{
+						width:100%;
+						border-top:none;
+
+						header{
+							min-height:0px !important;
+							padding:0 0 15px 0;
+						}
+					}
+					figure{
+						width:100%;
+					}
+
+					a.more{
+						position:static;
+						color:$color5;
+					    font-weight: 700;
+					    font-size:1.6em;
+					    padding:10px 0 10px 0;
+					    text-decoration: none;
+					    outline: none;
+					    @include border-radius(5px);
+					    background-color:$color1;
+					    @include transition-property('background-color');
+					    @include transition-duration(0.7s);
+					    @include box-shadow(-2px 2px 10px 0px #999);
+					    @include block-left;
+					    width:100%;
+					    text-align: center;
+					    margin-top:20px;
+
+					    &:hover{
+					        text-decoration: none;
+					        outline:none;
+					        background-color:lighten($color1, 10%);
+					        color:$color5;
+					    }
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

@@ -1,0 +1,151 @@
+
+/* CSS validation overrides */
+:required {}
+
+:optional {}
+
+:valid {}
+
+:invalid {}
+
+:default {}
+
+:in-range {}
+
+:out-of-range {}
+
+
+.no-js{
+    form{
+        input[type="submit"]{
+            display:block;
+        }
+
+        a.js-submit{
+            display: none;
+        }
+    }
+}
+
+form {
+    fieldset {
+        @include block-left;
+        width: 100%;
+        @include reset-box;
+
+
+        legend{
+            color:$color2;
+            width:100%;
+            margin:0;
+            padding:0 0 24px 0;
+            font-size:2.0em;
+            @include custom-font();
+            @include block-left;
+        }
+    }
+
+    label{
+        width:100%;
+        @include block-left;
+        @include custom-font;
+        color:$color3;
+        font-size:1.6em;
+        padding:0;
+        margin:0 0 10px 0;
+        font-weight:700;
+
+        span{
+            color:$color2;
+        }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea{
+        margin:0 0 20px 0;
+        font-size:1.4em;
+        @include custom-font();
+        color:#333;
+        @include border-radius(15px);
+        padding:2% 5%;
+        @include box-shadow(inset 2px 2px 7px -2px #999);
+        border:none;
+        background-color:#fff;
+        width:90%;
+        border:#bbb solid 1px;
+    }
+
+    select{
+        width:100%;
+        margin:0 0 20px 0;
+        font-size: 1.6em;
+
+    }
+
+    input[type='search'] {
+        width:100%;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box; 
+        box-sizing:content-box;
+        border:none;
+        @include border-radius(15px);
+        @include box-shadow(#222, 1px, 1px, 5px, false, inset); 
+    }
+
+    input[type='submit']{
+        border:none;
+        width:auto;
+        font-weight:500;
+        cursor:pointer;
+        display:none;
+
+    
+        &.right{
+            margin-right:0px;
+        }
+    }
+
+    input[type='submit']:hover,
+    input[type='submit']:active{
+        
+    }
+
+    input[type='checkbox']{
+        width:15px;
+    }
+
+    textarea{
+        min-height:210px;
+    }
+}
+
+
+/* New input types */
+progress,
+meter {
+    width: 100%;
+    margin: 0 0 4% 0;
+    @include block-left;
+}
+
+textarea{
+    width:100%;
+    height:50px;
+}
+
+@media only screen and (max-width:$mobile){
+    form{
+        input[type="submit"],
+        a.js-submit{
+            width:100%;
+            text-align: center;
+            padding-left:0px;
+            padding-right:0px;
+        }
+
+    }
+}

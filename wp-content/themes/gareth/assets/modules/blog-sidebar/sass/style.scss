@@ -1,0 +1,146 @@
+// styles for the blog sidebar
+
+.blog-side{
+
+	h3{
+		@include block-left;
+		@include reset-box;
+		width:100%;
+		color:$color3;
+		font-size:2.2em;
+		line-height:2.2em;
+		font-weight: 700;
+		@include custom-font;
+	}
+		
+	nav{
+
+		@include block-left;
+		width:100%;
+
+		h3{
+			font-size:1.8em;
+			border-bottom:1px solid #dadada;
+			font-weight: 600;
+			@include block-left;
+			width:100%;
+
+			a{
+				span{
+					position:absolute;
+                	right:0px;
+                	top:3px;
+                	line-height: 1.2em;
+					font-size: 100%;
+                	display:none;
+                	@include no-drop-shadow;
+                	@include transition-property('rotate');
+					@include transition-duration(0.4s);
+				}
+
+				&:hover,
+				&.open{
+					span{
+						@include transform(rotate(90deg));
+					    color:$color1;
+					    &:before{
+					        color:$color1;
+					    }
+					}
+				}
+			}
+		}
+
+		ul{
+			list-style-type: none;
+			@include block-left;
+			width:100%;
+			padding:12px 0 30px 0;
+			margin:0;
+
+			li{
+				width:100%;
+				@include reset-box;
+				@include block-left;
+				padding:0 0 5px 0;
+
+				&.current-cat{
+					a{
+						color:$color1;
+					}
+				}
+
+				a{
+					font-size: 1.4em;
+					color:$color2;
+					font-weight: 600;
+					@include custom-font;
+					@include block-left;
+					line-height: 1.4em;
+
+					&:hover,
+					&.active{
+						text-decoration: none;
+						color:$color1;
+					}
+				}
+
+				ul{
+					padding:5px 0 0 25px;
+				}
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-width:$tablet){
+	.blog-side{
+		// blog nav
+        nav{
+            h3{
+                background:none;
+                font-size:1.4em;
+                @include bg-gradient(lighten($color1, 10%), $color1);
+                padding:10px;
+                margin:0 0 1px 0;
+
+                a{
+                    width:100%;
+                    color:white;
+                    position: relative;
+                    display:block;
+
+                    span{
+                      	display:block;
+                    	
+                    }
+
+                }
+            }
+
+            ul{
+                display:none;
+                overflow:hidden;
+                padding:10px;
+                background-color:white;
+                width:100%;
+                margin-bottom: 0px;
+
+                li{
+
+                    a{
+                        padding-bottom:10px;
+                        width:100%;
+                    }
+
+                    ul{
+                        display:block;
+                        margin-top:0px;
+                        padding-bottom:0px;
+                    }
+                }
+            }
+        }
+	}
+}

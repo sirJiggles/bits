@@ -1,0 +1,182 @@
+//Styles for the contact template
+
+.contact{
+	@include block-left;
+	padding:0 0 120px 0;
+	width:100%;
+
+	.contact-wrapper{
+
+		@include block-left;
+		width:100%;
+		padding:20px 30px 30px 30px;
+		@include radial-bg(white, #f8f8f8, 60%, 100%);
+		border:1px solid #ccc;
+
+		h3{
+			@include block-left;
+			width:100%;
+			font-size:1.8em;
+			font-weight: 700;
+			@include custom-font;
+			color:#333;
+			line-height:1.8em;
+			color:$color3;
+			padding:0 0 10px 0;
+		}
+
+		p{
+			color:#808080;
+			font-size: 1.4em;
+			line-height:1.4em;
+			@include custom-font;
+			@include reset-box;
+		}
+
+		.contact-form{
+			@include block-left;
+			@include no-border-box;
+			margin-top:20px;
+
+			*{
+				@include no-border-box;
+			}
+
+			label{
+				font-size: 1.4em;
+				line-height:1.4em;
+				margin-bottom:6px;
+			}
+
+			span{
+				color:$color1;
+			}
+
+			input[type="text"]{
+				margin-bottom:15px;
+			}
+		}
+	}
+
+
+	
+
+	.contact-thanks{
+		@include block-left;
+		width:100%;
+		margin:20px 0 0 0;
+		background-color: $color3;
+		padding:20px;
+
+		h3{
+			color:$color2;
+			@include custom-font;
+			font-size:1.6em;
+			margin:0 0 15px 0;
+		}
+
+		p{
+			color:white;
+			@include block-left;
+			width:100%;
+			margin:0;
+			padding:0;
+			font-size:1.4em;
+		}
+	}
+
+	.contact-details{
+		display:none;
+		float:left;
+		width:100%;
+		padding:20px 30px 30px 30px;
+		@include radial-bg(white, #f8f8f8, 60%, 100%);
+		border:1px solid #ccc;
+
+		h3{
+			@include block-left;
+			width:100%;
+			font-size:1.8em;
+			font-weight: 700;
+			@include custom-font;
+			color:#333;
+			line-height:1.8em;
+			color:$color3;
+			padding:0 0 10px 0;
+		}
+
+		ul{
+			list-style-type: none;
+			@include block-left;
+			width:100%;
+			padding:0 0 20px 0;
+
+			li{
+				width:100%;
+				@include block-left;
+				font-size:1.4em;
+				line-height:1.0em;
+				@include reset-box;
+				color:$color2;
+				padding:0 0 10px 0;
+
+				strong{
+					color:black;
+					font-weight: 700;
+					float:left;
+					margin:0 5px 0 0;
+				}
+
+				a{
+				 	color:$color1;
+				 	font-size: 1.0em;
+				 	line-height:1.0em;
+				 	@include custom-font;
+				 	@include block-left;
+				 	width:auto;
+				}
+			}
+		}
+	}
+
+}
+
+@media only screen and (max-width:$desktop){
+
+	.contact-grid{
+		width:100% !important;
+	}
+
+	.contact-wrapper{
+		position:relative;
+		z-index:99999;
+		margin-top:290px;
+
+	}
+}
+
+@media only screen and (max-width:$tablet){
+	.contact{
+		padding:0px;
+	}
+
+}
+
+@media only screen and (max-width:$mobile){
+	.contact{
+		.contact-wrapper{
+			margin-top:0px;
+			position:static;
+			z-index:0;
+			margin-top:20px;
+		}
+
+		.contact-details{
+			position:relative;
+			z-index:99999;
+			margin-top:160px;
+			display:block;
+		}
+	}
+}
+

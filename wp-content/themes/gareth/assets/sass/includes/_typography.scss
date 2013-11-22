@@ -1,0 +1,230 @@
+/* Typography style sheet */
+@import "includes/_settings";
+@import "includes/_mixins";
+
+
+body {
+    font-size:10px;
+    @include custom-font;
+    -webkit-font-smoothing: antialiased;
+    line-height:1.5em;
+}
+
+// CUSTOM FONT
+@font-face {
+  font-family: 'social-icons';
+  src: url('#{$siteUrl}/assets/fonts/social-icons.eot?9630016');
+  src: url('#{$siteUrl}/assets/fonts/social-icons.eot?9630016#iefix') format('embedded-opentype'),
+       url('#{$siteUrl}/assets/fonts/social-icons.woff?9630016') format('woff'),
+       url('#{$siteUrl}/assets/fonts/social-icons.ttf?9630016') format('truetype'),
+       url('#{$siteUrl}/assets/fonts/social-icons.svg?9630016#social-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "social-icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    color:#c5c5c5;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+     
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+}
+
+.icon-play,
+.icon-search,
+.icon-fast-forward,
+.icon-fast-backward,
+.icon-twitter,
+.icon-gplus,
+.icon-linkedin,
+.icon-facebook{
+    @include block-left;
+    font-size:180%;
+
+    &:hover:before{
+        color:$color1;
+    }
+}
+
+.icon-search:before { content: '\e807'; } /* '' */
+.icon-play:before { content: '\e806'; } /* '' */
+.icon-fast-forward:before { content: '\e804'; } /* '' */
+.icon-fast-backward:before { content: '\e805'; } /* '' */
+.icon-gplus:before { content: '\e800'; } /* '' */
+.icon-linkedin:before { content: '\e803'; } /* '' */
+.icon-twitter:before { content: '\e801'; } /* '' */
+.icon-facebook:before { content: '\e802'; } /* '' */
+
+
+
+/* ======== Headings ======= */
+
+h1,h2,h3,h4,h5,h6{
+   color:$color3;
+   @include block-left;
+   font-weight: 400;
+   width:100%;
+}
+
+h1 {
+    line-height:1.2em;
+    font-weight: 400;
+    margin:15px 0 0 0;
+    padding-bottom:15px;
+    color:#444;
+
+}
+
+h2 {
+    line-height:1.2em;
+    margin: 0 0 20px 0;
+}
+
+h3 {
+    line-height:1.2em;
+    margin:0;
+}
+
+h4{
+
+    line-height:1.2em;
+    margin:0 0 15px 0;
+}
+
+h5{
+    padding:0 0 10px 0;
+}
+
+
+
+/* ===== Global common elements ======= */
+
+p {
+  margin:0px;
+  padding:0 0 20px 0;
+  color:$color2;
+  font-size: 1.6em;
+  line-height:1.6em;
+}
+
+ul {
+    list-style-type: disc;
+    padding: 0 0 20px 30px;
+    margin: 0px;
+    @include block-left;
+    width:100%;
+
+    li {
+        margin: 0 0 10px 0;
+        color:$color2;
+    }
+}
+
+em{
+    @include custom-font();
+    font-style:normal;
+}
+
+cite{
+    font-style:normal;
+}
+
+a{
+    outline:none;
+    border:none;
+    text-decoration:none;
+    outline:none;
+    color:$color2;
+}
+
+dl{
+    margin:0;
+    padding:0 0 20px 0;
+    @include block-left;
+    width:100%;
+
+    dt,dd{
+        @include block-left;
+        color:$color2;
+        font-size:1.4em;
+        line-height:1.4em;
+
+    }
+    dt{
+        width:50%;
+        @include custom-font();
+        margin-bottom:10px;
+    }
+    dd{
+        width:50%;
+        margin-bottom:10px;
+    }
+}
+
+table{
+    margin:0 0 20px 0;
+    width:100%;
+    border:1px solid #f5e7ec;
+
+    tr{
+        th,td{
+            padding:10px;
+            color:$color2;
+            background-color:white;
+            font-size:1.4em;
+            line-height:1.4em;
+            @include custom-font;
+            border:1px solid #f5e7ec;
+             
+        }
+
+        th{
+            color:$color5;
+            font-size:1.3em;
+            line-height: 1.3em;
+            background-color: $color1;
+        }
+
+    }
+}
+
+
+strong{
+    @include custom-font();
+}
+
+img.alignleft{
+    float:left;
+    margin:0 20px 10px 0;
+}
+
+img.alignright{
+    float:right;
+    margin:0 0 10px 20px
+}
+
+img.aligncenter{
+    float:none;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}

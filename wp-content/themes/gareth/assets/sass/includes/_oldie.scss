@@ -1,0 +1,37 @@
+/* OLIDIE so IE7 and 8 */
+body.ie7,
+body.ie8{
+	.arrow-left,
+	.arrow-up,
+	.arrow-right,
+	.arrow-down{
+		text-indent:-9999px;
+		overflow:hidden;
+		padding:0px;
+		width:23px;
+		height:23px;
+		background-color: transparent;
+	}
+
+	.arrow-left{
+		@include sprite('arrow-left');
+	}
+
+	.arrow-right{
+		@include sprite('arrow-right');
+	}
+
+	.arrow-bottom{
+		@include sprite('arrow-down');
+	}
+
+	.arrow-top{
+		@include sprite('arrow-up');
+	}
+
+	#site-wrapper,
+	#site-footer{
+		min-width:960px;
+    	overflow:visible;
+	}
+}

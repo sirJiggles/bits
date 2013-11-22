@@ -1,0 +1,206 @@
+
+.push {
+    height: $footer-height+px;
+    clear:left;
+}
+
+.footer-row{
+	z-index:99;
+	position:relative;
+	background-color:$color4;
+    margin-top:20px;
+}
+
+#site-footer{
+
+    height:$footer-height+px;
+    @include block-left;
+    width:100%;
+    padding:20px 0 0 0;
+
+    ul{
+        list-style-type:none;
+        @include reset-box;
+        width:100%;
+        @include block-left;
+
+        li{
+            @include reset-box;
+            @include block-left;
+        }
+    }
+
+    a.back-to-top{
+        width:40px;
+        height:40px;
+        background-color:$color3;
+        @include border-radius(20px);
+        color:$color5;
+        font-size:4.0em;
+        margin:0 auto;
+        display:none;
+        padding:11px 0 0 8px;
+        line-height:1.0em;
+    }
+
+    .footer-left{
+        float:left;
+        display:block;
+        width:48%;
+        padding:20px 0 0 0;
+
+
+        p{
+            @include block-left;
+            width:100%;
+            @include custom-font;
+            @include reset-box;
+            font-size:1.2em;
+            line-height:1.5em;
+            color:$color2;
+            font-weight:400;
+            padding:0 0 20px 0;
+
+            &.copy{
+                font-weight: 700;
+                color:#767d82;
+                padding:0 0 15px 0;
+            }
+        }
+
+        ul{
+            li{
+                margin:0 20px 0 0;
+
+                a{
+                    color:$color1;
+                    @include custom-font;
+                    font-size:1.2em;
+                    font-weight:700;
+                    text-decoration: none;
+                    outline:none;
+
+                    &:hover{
+                        text-decoration: underline;
+                        outline:none;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .footer-right{
+        float:right;
+        display:block;
+        width:40%;
+        padding:55px 0 0 0;
+
+        a{
+            text-decoration: none;
+            outline:none;
+            display:block;
+            
+            &.email{
+                color:$color1;
+                font-weight: 700;
+                font-size:1.2em;
+                width:100%;
+                text-align: right;
+                padding:0 0 10px 0;
+            }
+
+            &.tel{
+                color:$color2;
+                font-weight: 600;
+                font-size: 1.4em;
+                width:100%;
+                text-align: right;
+            }
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+
+        .social{
+
+            padding:15px 0 0 0;
+            float:right;
+            width:auto;
+
+            li{
+                margin:0 0 0 15px;
+
+                a{
+                    @include block-left;
+                    color:$color1;
+
+                    &:hover{
+                        color:lighten($color1, 20%);
+                        text-decoration: none;
+                    }
+
+                    &:before{
+                        color:$color1;
+                    }
+
+                    &:hover:before{
+                        color:lighten($color1, 20%);
+                    }
+                }
+            }
+        } //end social
+    } //end footer right
+
+}
+
+@media only screen and (max-width:$desktop){
+    #site-footer{
+
+        height:100%;
+
+        .footer-left,
+        .footer-right{
+            width:100%;
+            float:left;
+        }
+
+        .footer-left{
+            ul{
+                li{
+                     padding:0 0 10px 0;
+                }
+            }
+        }
+
+        .footer-right{
+
+            padding:20px 0 30px 0;
+
+            .social{
+                float:left;
+
+                li{
+                    margin:0 15px 0 0;
+                }
+            }
+
+            a{
+                &.email,
+                &.tel{
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:$mobile){
+    #site-footer{
+        a.back-to-top{
+            display:block;
+        }
+    }
+}

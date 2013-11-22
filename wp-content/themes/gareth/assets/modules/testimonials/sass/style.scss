@@ -1,0 +1,93 @@
+/* Styles for testimonials */
+
+.testimonial{
+	@include block-left;
+	width:100%;
+	margin:20px 0 0 0;
+	padding:0 0 30px 0;
+
+	header{
+		@include block-left;
+		width:100%;
+
+		h1{
+			@include block-left;
+			width:100%;
+			color:$color3;
+			font-weight: 700;
+			@include custom-font;
+			font-size:1.8em;
+			line-height: 1.6em;
+			padding:0 0 10px 0;
+			margin:0;
+		}
+	}
+
+	.testimonial-inner{
+		@include block-left;
+		width:100%;
+		border:1px solid #ccc;
+
+		h2{
+			@include block-left;
+			width:100%;
+			padding:19px;
+			color:$color3;
+			@include custom-font;
+			font-weight: 700;
+			font-size: 1.6em;
+			line-height:1.4em;
+			margin:0;
+
+			p{
+				@include reset-box;
+				font-size: 1.0em;
+				line-height: 1.0em;
+				color:$color3;
+				@include custom-font;
+				font-weight: 700;
+				display:inline;
+			}
+		} //h2
+
+
+		figure{
+			width:100%;
+			@include block-left;
+
+			img{
+				@include block-left;
+				height:auto;
+				width:100%;
+			}
+
+			figcaption{
+				@include block-left;
+				width:100%;
+				background-color: $color1;
+				padding:12px;
+
+				cite,
+				.role{
+					@include block-left;
+					width:100%;
+					color:$color5;
+					@include custom-font;
+					font-size:1.2em;
+					line-height: 1.2em;
+				}
+
+				cite{
+					font-weight: 700;
+					padding:0 0 3px 0;
+				}
+
+				.role{
+					font-weight: 600;
+				}
+			}
+		} //figure
+
+
+	} // testimonial inner
+}

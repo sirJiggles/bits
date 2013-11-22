@@ -1,0 +1,160 @@
+/* Styles for the resource library landing page */
+
+.resources-section{
+	
+	.resources{
+		margin:20px 0 0 0;
+		@include block-left;
+		width:100%;
+		list-style-type: none;
+		padding:0;
+
+		li{
+			@include block-left;
+			width:100%;
+			border:1px solid #ccc;
+			@include radial-bg(white, #f8f8f8, 60%, 100%);
+			padding:0px;
+			margin:0 0 10px 0;
+
+			a{
+				@include block-left;
+				width:100%;
+				outline: none;
+				position: relative;
+
+				&:hover{
+					span{
+					    color:$color1;
+					    &:before{
+					        color:$color1;
+					    }
+					}
+				}
+
+				span{
+					position:absolute;
+					display:block;
+					top:10px;
+					right:10px;
+				}
+
+				article{
+					@include block-left;
+					width:100%;
+					padding:10px 15px 0px 15px;
+
+					header{
+						@include block-left;
+						width:100%;
+
+						h1{
+							@include reset-box;
+							font-size:1.8em;
+							line-height:1.8em;
+							font-weight: 700;
+							color:$color3;
+							@include custom-font;
+							width:100%;
+							@include block-left;
+						}
+
+						p{
+							color:$color2;
+							font-size:1.4em;
+							@include custom-font;
+						}
+					}
+				}
+
+			}
+		}
+	} // end the resources listing
+
+	.content{
+		@include block-left;
+	    margin:20px 0 0 0;
+	    padding:25px;
+	    border:1px solid #ccc;
+	    @include radial-bg(white, #f8f8f8, 60%, 100%);
+
+	    header{
+	        h1{
+	            font-weight: 700;
+	            font-size: 2.0em;
+	            line-height:2.0em;
+	            color:$color1;
+	            @include custom-font;
+	        }
+	    }
+
+	    p{
+	    	color:$color2;
+	    	font-size:1.4em;
+	    	@include custom-font;
+	    	line-height:1.4em;
+	    }
+
+	    a{
+	        font-size:1.0em;
+	        line-height:1.0em;
+	        @include custom-font;
+	        color:$color1;
+
+	        &:hover{
+	            text-decoration: underline;
+	            color:lighten($color1, 10%);
+	        }
+	  
+	    }
+
+	    ul{
+	        li{
+	            font-size:1.4em;
+	            line-height:1.4em;
+	        }
+	    }
+
+	    h2,h3,h4,h5,h6{
+	        
+	        color:$color3;
+	        line-height:1.8em;
+	        font-weight: 700;
+	        font-size: 1.8em;
+	        @include custom-font;
+	        margin:0 50% 20px 0;
+	        width:auto;
+	        float:none;
+	        display:inline-block;
+	    }
+
+	    h4{
+	        font-size:1.6em;
+	    }
+
+	    h5{
+	        font-size:1.5em;
+	    }
+
+	    h6{
+	        font-size:1.3em;
+	    }
+	}
+
+}
+
+
+@media only screen and (max-width:$mobile){
+	.resources-section{
+		.content{
+			img{
+				width:100%;
+				height:auto;
+				margin-bottom:20px;
+			}
+		}
+
+	}
+
+}
+

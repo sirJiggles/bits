@@ -1,0 +1,89 @@
+/* Styles for the team view */
+
+.team{
+	
+	.category-nav{
+		@include block-left;
+		width:100%;
+		padding:12px 15px;
+		@include bg-gradient(#fafafa, white);
+
+		ul{
+			@include block-left;
+			width:100%;
+			list-style-type: none;
+			@include reset-box;
+
+			li{
+				list-style-type: none;
+				@include block-left;
+				padding:0 20px 0 20px;
+				margin:0px;
+				border-right:1px solid #b6b9bc;
+
+				&.last{
+					border-right:none;
+				}
+
+				&.first{
+					padding-left:0px;
+				}
+
+				a{
+					@include block-left;
+					@include transition-property('color');
+					@include transition-duration(0.7s);
+					color:#9fa3a7;
+					@include custom-font;
+					font-size:1.2em;
+					line-height:1.2em;
+					font-weight: 600;
+
+					&:hover,
+					&.active{
+						color:$color1;
+						text-decoration: none;
+						outline:none;
+					}
+				}
+
+			} // end the li
+
+		} // end the ul
+
+	} //end the category nav 
+
+}
+
+@media only screen and (max-width:$desktop){
+	.team{
+		.category-nav{
+			ul{
+				li{
+					padding:10px 20px 10px 0;
+					border:none;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:$mobile){
+	.team{
+		.category-nav{
+			ul{
+				li{
+					width:100%;
+					padding:5px 0;
+
+					a{
+						text-align: center;
+						font-size:1.4em;
+						font-weight:700;
+						width:100%;
+					}
+				}
+			}
+		}
+	}
+}

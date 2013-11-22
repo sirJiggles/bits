@@ -1,0 +1,199 @@
+
+// Standard mobile navigation
+
+.main-nav-standard{
+
+	@include block-left;
+	width:100%;
+	position:absolute;
+	bottom:2px;
+	left:20px;
+
+	nav{
+		@include block-left;
+		width:100%;
+	}
+
+	ul{
+		@include reset-box;
+		float:left;
+		width:auto;
+
+		li{
+			display:inline-block;
+			margin:0 2px 0 0;
+			float:left;
+
+			&:last-child{
+				margin-right:0px;
+			}
+
+			&.current_page_item,
+			&.current-menu-item,
+			&.current_page_parent,
+			&.current-page-ancestor{
+				a{
+					background-color:$color1;
+				}
+			}
+
+			a{
+				text-decoration: none;
+				color:$color5;
+				width:100%;
+				background-color:#a7b0b6;
+				padding:9px 15px;
+				text-align: center;
+				@include block-left;
+				@include custom-font();
+				font-weight: 700;
+				font-size:1.4em;
+				@include transition-property('background-color');
+				@include transition-duration(0.7s);
+
+				&:hover{
+					background-color:$color1;
+				}
+			}
+
+
+		}
+
+	}
+
+}
+
+.nav-controls{
+	float:left;
+	display:none;
+	padding:5px 0;
+	width:100%;
+	background-color:$color1;
+	left:0px;
+	top:0px;
+	position:fixed;
+	z-index:9999999;
+	@include box-shadow(0px 0px 6px 2px #000);
+
+	a{
+		text-decoration: none;
+		outline:none;
+		width:35px;
+		height:5px;
+		background-color: $color5;
+		@include block-left;
+		text-indent: 9999px;
+		margin:15px 0 15px 20px;
+		position:relative;
+		@include border-radius(5px);
+
+		&:after,
+		&:before{
+			position:absolute;
+			@include border-radius(5px);
+			width:35px;
+			height:5px;
+			left:0px;
+			content:' ';
+			background-color: $color5;
+		}
+
+		&:after{
+			top:-9px;
+		}
+
+		&:before{
+			bottom:-9px;
+		}
+
+		span{
+			width:35px;
+			height:26px;
+			position:absolute;
+			top:-11px;
+			left:0px;
+			display:block;
+		}
+	}
+}
+
+// Change the nav at various break points
+
+/* TABLET DOWN */
+@media only screen and (max-width: $desktop){
+
+	.nav-controls{
+		width:100%;
+
+	}
+
+	.main-nav-standard{
+
+		position:relative;
+		top:auto;
+		left:0px;
+
+		nav{
+			position:relative;
+			top:auto;
+			bottom:auto;
+			left:0px;
+		}
+
+		ul{
+			margin:15px 0 0 0;
+			width:100%;
+			background-color: white;
+			overflow: hidden;
+			height:0px;
+			@include transition-property(height);
+			@include transition-duration(1.0s);
+
+
+			li{
+				width:100%;
+				padding:1px 0;
+
+				a{
+					text-align: left;
+					padding:15px;
+				}
+
+				&.active{
+					margin-top:0px;
+					a{
+						padding-bottom:6px;
+					}
+				}
+
+				&.last{
+					background:none;
+				}
+			}
+
+			&.open{
+				height:235px;
+				margin-bottom:0px;
+			}
+
+		}
+
+		
+
+	}
+	.nav-controls{
+		display:block;
+		left:auto;
+		right:0px;
+	}
+
+	#nav-header{
+		.row{
+			.grid-12{
+				margin-bottom:0px;
+			}
+		}
+	}
+
+}
+

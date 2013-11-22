@@ -1,0 +1,167 @@
+/*
+ * Start of the styles for the header 
+ */
+
+#nav-header{
+
+	padding:20px 0 0px 0;
+	border-top:5px solid $color1;
+
+	@include system-drop-shadow();
+
+	.row{
+		position:relative;
+		padding-bottom:60px;
+	}
+
+	// title
+	a.title{
+		text-decoration: none;
+		outline:none;
+		@include block-left;
+
+		h1{
+			width:249px;
+			height:78px;
+			overflow: hidden;
+			text-indent: -9999px;
+			@include sprite('logo');
+			@include block-left;
+			@include reset-box;
+		}
+	}
+
+	//search form
+	form{
+		position:absolute;
+		top:0px;
+		right:20px;
+
+		@include no-border-box;
+
+		input[type="text"]{
+			padding-right:25px;
+			width:250px;
+			font-weight: 700;
+			@include transition-property('width');
+			@include transition-duration(0.7s);
+			padding:5px 35px 5px 10px;
+		}
+
+		input[type="submit"],
+		a.icon-search{
+			width: 16px;
+			height: 16px;
+			position: absolute;
+			top:7px;
+		}
+
+		input[type="submit"]{
+			border: none;
+			outline: none;
+			padding: 0px;
+			background: url('../img/search-icon.png') 0 0 no-repeat;
+			right: 10px;
+		}
+
+		a.icon-search{
+			right:16px;
+		}
+	}
+
+	.header-right{
+		@include block-left;
+		padding:45px 0 0 35px;
+		width:70%;
+
+		h2,h3{
+			@include block-left;
+			@include reset-box;
+			width:100%;
+		}
+
+		h2{
+			font-size:2.0em;
+			padding:0 0 6px 0;
+			color:black;
+
+			a{
+				font-weight: 700;
+				color:$color1;
+			}
+		}
+		h3{
+			font-size:1.4em;
+			color:black;
+		}
+	}
+
+}
+
+@media only screen and (max-width: $desktop){
+	#nav-header{
+
+		padding-top:32px;
+
+		.row{
+			padding-bottom:0px;
+		}
+
+		form{
+			position: fixed;
+			top: 8px;
+			width: 80%;
+			z-index: 9999999;
+			right: 20px;
+
+			input[type="text"]{
+				width:100%;
+				padding:4px 20px 4px 20px;
+			}
+
+			input[type="submit"]{
+				top:7px;
+				right:13px;
+			}
+
+		}
+
+		a.title{
+			width:100%;
+
+			h1{
+				margin:0 auto;
+				float:none;
+			}
+		}
+
+		.header-right{
+			width:100%;
+			padding:20px 0 20px 0;
+
+			h2,
+			h3{
+				text-align: center;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $mobile){
+	#nav-header{
+		form{
+			width:50%;
+		}
+
+		.header-right{
+			h2{
+				a{
+					@include block-left;
+					width:100%;
+				}
+			}
+		}
+	}
+}
+
+

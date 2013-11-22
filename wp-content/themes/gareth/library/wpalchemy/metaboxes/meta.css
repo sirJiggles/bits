@@ -1,0 +1,13 @@
+.my_meta_control .description { display:none; }
+.my_meta_control .wpa_group { margin: 10px 0; padding-bottom: 10px; border-bottom: 1px dashed #dadada; }
+.my_meta_control label { font-weight:bold; min-width: 100px; float: left; }
+.my_meta_control label span { display:inline; font-weight:normal; }
+.my_meta_control p { margin: 5px 0; }
+.my_meta_control p span { color:#999; display:block; }
+.my_meta_control textarea, .my_meta_control input[type='text'] { margin-bottom:5px; }
+.my_meta_control textarea { width: 500px; height: 80px; }
+.my_meta_control h4 { color:#999; font-size:1em; margin:15px 6px; text-transform:uppercase; }
+.my_meta_control img { float: left; margin-right: 10px; }
+
+.inner-sidebar .my_meta_control label { margin-bottom: 5px; }
+.inner-sidebar .my_meta_control textarea, .inner-sidebar .my_meta_control input[type='text'] { width: 255px; }

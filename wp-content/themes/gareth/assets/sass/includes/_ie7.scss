@@ -1,0 +1,35 @@
+/* IE7 Styles */
+body.ie7{
+
+	[class^="icon-"], [class*=" icon-"] {
+	  font-family: 'social-icons';
+	  font-style: normal;
+	  font-weight: normal;
+	 
+	  /* fix buttons height */
+	  line-height: 1em;
+	 
+	}
+
+	.icon-play,
+	.icon-search,
+	.icon-fast-forward,
+	.icon-fast-backward,
+	.icon-twitter,
+	.icon-gplus,
+	.icon-linkedin,
+	.icon-facebook{
+	    float:left;
+	    font-size:180%;
+	}
+
+	.icon-search { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe807;&nbsp;'); }
+	.icon-play { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe806;&nbsp;'); }
+	.icon-fast-forward { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe804;&nbsp;'); }
+	.icon-fast-backward { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe805;&nbsp;'); }
+	.icon-gplus { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
+	.icon-linkedin { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe803;&nbsp;'); }
+	.icon-twitter { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe801;&nbsp;'); }
+	.icon-facebook { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe802;&nbsp;'); }
+	
+}

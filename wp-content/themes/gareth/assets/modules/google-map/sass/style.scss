@@ -1,0 +1,91 @@
+/* Styles for the google map */
+
+
+.map-wrapper{
+
+	height: 770px;
+	width:100%;
+	position:relative;
+	overflow:hidden;
+	border:1px solid #ccc;
+
+
+	#map-container{
+		height:100%;
+		width:100%;
+		position:relative;
+
+		*{
+			@include no-border-box();
+		}
+	}
+
+	h3{
+		position:absolute;
+		color:$color5;
+		background-color:$color1;
+		padding:15px;
+		font-weight: 700;
+		font-size:1.8em;
+		@include custom-font;
+		top:20px;
+		left:0px;
+		width:auto;
+		z-index:999999;
+	}
+
+	.info-window{
+
+		font-size:1.4em;
+		min-width:230px;
+
+		h4{
+			font-weight: 700;
+			color:$color2;
+			@include custom-font;
+			font-size:1.4em;
+			line-height:1.4em;
+		}
+
+		a{
+			color:$color1;
+			font-weight:700;
+			font-size:1.0em;
+
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+
+		strong{
+			color:black;
+			font-weight: 700;
+		}
+	}
+
+
+}
+
+@media only screen and (max-width:$desktop){
+	.map-wrapper{
+		height:450px;
+		position:absolute;
+		left:0px;
+		width:100%;
+
+		h3{
+			padding:15px 20px;
+		}
+	}
+}
+
+@media only screen and (max-width:$mobile){
+	.map-wrapper{
+
+		height:220px;
+
+		h3{
+			display:none;
+		}
+	}
+}

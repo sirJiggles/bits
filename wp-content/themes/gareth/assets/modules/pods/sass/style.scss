@@ -1,0 +1,408 @@
+// Styles for the various pods
+
+// when used in an aside
+aside{
+	.pod{
+		margin-top:20px;
+		padding:0px;
+		width:100%;
+		
+		article{
+			min-height:0px;
+
+		}
+
+		a.btn{
+			position:static;
+		}
+
+		&.newsletter{
+
+		}
+	}
+}
+
+.pod{
+
+	@include block-left;
+	padding:40px 0 0 0;
+
+	article{
+		@include block-left;
+		width:100%;
+		position:relative;
+		padding:0 0 30px 0;
+		min-height:330px;
+	}
+
+	header{
+		@include block-left;
+		width:100%;
+
+		h1{
+			width:100%;
+			margin:0;
+			padding:0 0 20px 0;
+			@include custom-font();
+			font-weight: 700;
+			color:$color3;
+			font-size:1.8em;
+		}
+	}
+
+	p{
+		@include custom-font();
+		color:$color2;
+		font-size:1.4em;
+	}
+
+	.twitter,
+	.news,
+	.pages{
+		@include block-left;
+		width:100%;
+	}
+
+	a.btn{
+		position:absolute;
+		bottom:0px;
+		left:0px;
+
+		&.js-submit{
+			position:static;
+		}
+	}
+
+	// styles for the twitter pod
+	.twitter{
+		
+		.content{
+			@include block-left;
+			width:100%;
+			background-color:#efefef;
+			padding:20px 30px 25px 15px;
+			@include border-radius(10px);
+			position:relative;
+			min-height:210px;
+
+			span{
+				text-indent:0px;
+				@include block-left;
+				padding-top:6px;
+                color:$color1;
+                cursor: pointer;
+
+                &:hover{
+                    color:lighten($color1, 20%);
+                    text-decoration: none;
+                }
+
+                &:before{
+                    color:$color1;
+                }
+
+                &:hover:before{
+                    color:lighten($color1, 20%);
+                }
+			}
+
+			p{
+				display:block;
+				float:right;
+				@include reset-box;
+				font-size:16px;
+				color:$color2;
+				width:85%;
+			}
+
+			&:before,
+			&:after{
+				content:' ';
+				position:absolute;
+				z-index:-1;
+				@include rotate(9deg);
+			}
+
+			&:before{
+				width:43px;
+				height:31px;
+				bottom:-26px;
+				left:40px;
+				background-color:#efefef;
+				@include border-radius(0px 0px 31px 0px);
+			}
+
+			&:after{
+				width:17px;
+				height:31px;
+				left:38px;
+				bottom:-29px;
+				background-color:white;
+				@include border-radius(0px 24px 31px 0px, 100% 49% 380% 100%);
+			}
+
+		}
+
+		time{
+			display:block;
+			float:right;
+			font-size:1.2em;
+			color:$color2;
+			font-style:italic;
+			margin:15px 0 0 0;
+			@include custom-font();
+			color:#4e4e4e;
+		}
+
+	}
+
+	// styles shared with both news and pages pod
+	.news,
+	.pages{
+		ul{
+			list-style-type: none;
+			padding:0 0 10px 0;
+			@include block-left;
+			width:100%;
+
+			li{
+				@include block-left;
+				@include reset-box;
+				width:100%;
+				border-bottom:1px solid #dadada;
+
+				&:last-child{
+					border-bottom:none;
+				}
+
+				a{
+					@include custom-font;
+					@include block-left;
+					width:100%;
+
+					&:hover{
+						color:$color1;
+					}
+				}
+			}
+		}
+	}
+
+	// styles for the news type pod
+	.news{
+
+		ul{
+			margin:-15px 0 0 0;
+
+			li{
+				padding:15px 0px 8px 0px;
+
+				a{
+					font-weight: 600;
+					font-size: 1.6em;
+					color:$color2;
+					line-height:1.3em;
+				}
+
+				time{
+					width:100%;
+					@include block-left;
+					color:#767d82;
+					font-size:1.2em;
+					font-style: italic;
+					padding:0 0 6px 0;
+				}
+
+
+			}
+		} 
+	} 
+
+	// Start of the page listing pod
+	.pages{
+		ul{
+			
+			margin:-12px 0 0 0;
+
+			li{
+
+				padding:5px 0px;
+
+				a{
+					color:black;
+					font-size:1.6em;
+					font-weight:700;
+					line-height:1.8em;
+				}
+			}
+		}
+
+	}
+
+	.newsletter{
+		label{
+			width:20%;
+			margin:7px 0 0 0;
+		}
+		input[type="text"],
+		input[type="email"]{
+			width:80%;
+			margin-bottom:15px;
+		}
+	}
+
+	.video{
+
+		@include block-left;
+		width:100%;
+
+		.video-wrapper{
+			position: relative; 
+			padding-bottom: 56.25%; 
+			padding-top: 30px; 
+			height: 0; 
+			overflow: hidden;
+
+			iframe,
+			object,
+			embed{
+				position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 100%;
+			    height: 100%;
+			}
+		}
+
+		cite,h3{
+			font-size: 1.4em;
+			@include block-left;
+			width:100%;
+		}
+
+		cite{
+			font-style: normal;
+			color:$color1;
+			font-weight:700;
+			margin:10px 0 0 0;
+		}
+
+		h3{
+			margin:5px 0 0 0;
+			color:$color2;
+			font-weight:600;
+		}
+	}
+
+}
+
+
+@media only screen and (max-width:$desktop){
+	.pod.grid-4{
+		width:100% !important;
+		//border-bottom:1px solid #dadada;
+		padding:30px 0 0 0;
+		@include system-drop-shadow;
+
+		&:last-child{
+			//border-bottom:none;
+			box-shadow:none;
+		}
+
+		article{
+			min-height:0px;
+			height:auto;
+		}
+
+		a.btn{
+			position:static;
+		}
+
+		.newsletter{
+			input[type="text"],
+			input[type="email"]{
+				padding:1% 2%;
+			}
+		}
+		.twitter{
+			.content{
+				min-height:0px;
+			}
+		}
+	}
+
+	// when in an aside
+	aside{
+		.pod{
+			article{
+				.newsletter{
+					input[type="text"],
+					input[type="email"]{
+						padding:2% 5%;
+						width:100%;
+						margin-bottom:15px;
+					}
+
+					label{
+						width:100%;
+						margin-bottom:10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:$tablet){
+	.pod.grid-4{
+		margin:0px;
+		a.btn,
+		input[type="submit"]{
+			width:100%;
+			text-align:center;
+		}
+	}
+
+	aside{
+		.pod{
+			width:100%;
+		}
+	}
+}
+
+@media only screen and (max-width:$mobile){
+
+	.pod{
+		a.btn{
+			width:100%;
+			text-align:center;
+
+		}
+	}
+	.pod.grid-4{
+		.newsletter{
+			input[type="text"],
+			input[type="email"]{
+				padding:2% 5%;
+				width:100%;
+				margin-bottom:15px;
+			}
+
+			label{
+				width:100%;
+				margin-bottom:10px;
+			}
+		}
+
+		.twitter{
+			.content{
+				span{
+					display:none;
+				}
+				p{
+					width:100%;
+				}
+			}
+		}
+	}
+}

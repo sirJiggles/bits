@@ -1,0 +1,129 @@
+/* Styles for the serices module */
+
+.services{
+	padding-bottom:30px;
+
+	a{
+		@include block-left;
+		width:100%;
+
+		&:hover{
+			text-decoration: none;
+			outline:none;
+
+			article{
+				figure{
+					figcaption{
+						bottom:0px;
+
+						h1{
+							color:$color1;
+						}
+					}
+				}
+
+				span{
+					color:$color1;
+
+					&:before{
+						color:$color1;
+					}
+				}
+			}
+		}
+	}
+
+	article{
+		width:100%;
+		@include block-left;
+		position:relative;
+		padding:0 0 30px 0;
+
+		span{
+			position:absolute;
+			right:13px;
+			bottom:41px;
+			display:block;
+		}
+
+		figure{
+			@include block-left;
+			width:100%;
+			overflow: hidden;
+			position:relative;
+			padding:0 0 40px 0;
+			border:1px solid #ccc;
+
+			img{
+				width:100%;
+				height:auto;
+				display:block;
+			}
+
+			figcaption{
+				@include block-left;
+				width:100%;
+				overflow:hidden;
+				@include transition-property('bottom');
+				@include transition-duration(0.5s);
+				padding:10px 15px;
+				position:absolute;
+				bottom:-121px;
+				height:162px;
+				background-color:white;
+
+				h1{
+					width:100%;
+					@include block-left;
+					color:$color2;
+					@include custom-font;
+					@include reset-box;
+					font-size:1.5em;
+					line-height:1.5em;
+					font-weight:700;
+					@include transition-property('color');
+					@include transition-duration(0.5s);
+					padding:0 0 10px 0;
+				}
+
+				p{
+					font-size:1.4em;
+					line-height:1.2em;
+					color:$color2;
+					@include block-left;
+					@include custom-font;
+					margin:0px;
+					padding:0 20px 0 0;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:$desktop){
+	.services{
+		article{
+			figure{
+				padding:0px;
+
+				figcaption{
+					position:static;
+					height:auto;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:$mobile){
+	.services{
+		padding-bottom:10px;
+		article{
+			padding-bottom:0px;
+
+			span{
+				bottom:11px;
+			}
+		}
+	}
+}

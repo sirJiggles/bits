@@ -1,0 +1,465 @@
+
+/* ================ MAIN LAYOUT ELEMENTS ================ */
+
+body{
+    
+}
+
+body,html{
+    height:100%;
+}
+
+
+#site-wrapper{
+    height:100%;
+    min-height: 100%;
+    height: auto;
+    margin-bottom:-$footer-height+px;
+    position:relative;
+    overflow:hidden;
+}
+
+.row {
+    @include container;
+
+    *{
+        @include border-box('#{$siteUrl}/assets/js/vendor/border-box.htc');
+    }
+    
+    .row{
+        margin-left:-$grid-padding;
+        margin-right:-$grid-padding;
+
+        *{
+            @include border-box('#{$siteUrl}/assets/js/vendor/border-box.htc');
+        }
+        
+    } // Nudge back nested rows
+
+    @for $i from 1 through $total-columns{
+        .grid-#{$i}{
+            @include span-columns($i);
+                        
+            &.end{
+                @include omega;
+            }
+        }
+
+    }
+}
+
+// system buttons
+.btn{
+
+    color:$color5;
+    font-weight: 700;
+    font-size:1.6em;
+    padding:10px 20px 10px 20px;
+    text-decoration: none;
+    outline: none;
+    @include border-radius(5px);
+    background-color:$color1;
+    @include transition-property('background-color');
+    @include transition-duration(0.7s);
+    @include box-shadow(-2px 2px 10px 0px #999);
+    @include block-left;
+
+    &:hover{
+        text-decoration: none;
+        outline:none;
+        background-color:lighten($color1, 10%);
+    }
+
+}
+
+
+// arrows
+.arrow-left,
+.arrow-up,
+.arrow-right,
+.arrow-down{
+    width:20px;
+    height:20px;
+    padding:1px 0 0 1px;
+    @include block-left;
+    outline:none;
+    text-decoration: none;
+    color:#c5c5c5;
+    background-color:white;
+    @include border-radius(10px);
+    font-size:140%;
+    @include box-shadow(0px 0px 3px 1px #ccc);
+    position: relative;
+
+    &:hover{
+        color:$color1;
+    }
+
+    &:hover:before{
+        color:$color1;
+    }
+
+}
+
+.arrow-left:before,
+.arrow-up:before,
+.arrow-right:before,
+.arrow-down:before{
+    position:absolute;
+    margin:0;
+    top:3px;
+    left:4px;
+}
+
+.arrow-left{
+    @include transform(rotate(180deg));
+    line-height:1.3em;
+}
+
+
+.arrow-up{
+     @include transform(rotate(270deg));
+     //padding:2px 0 0 2px;
+     width:18px;
+     height:18px;
+}
+
+.arrow-down{
+    /*@include transform(rotate(90deg));
+    padding:2px 0 0 2px;
+    width:18px;
+    height:18px;*/
+}
+
+// Styles for the drop shadow row
+.drop-shadow-row{
+    width:100%;
+    display:block;
+    @include system-drop-shadow;
+}
+
+.light-grey-row{
+    background-color:$color4;
+}
+
+
+// Tooltip styles
+.tooltip{
+    display:none;
+    top:210px;
+    z-index:99999;
+    left:300px;
+    position:absolute;
+    background-color: $color3;
+    color:$color2;
+    padding:5px 13px 5px 7px;
+    @include border-radius(0px 13px 13px 0px);
+    font-size:1.6em;
+
+    &:after{
+        //11 x 25
+        position:absolute;
+        content:' ';
+        border-top:solid transparent 13px;
+        border-right:solid $color3 11px;
+        border-bottom:solid transparent 13px;
+        border-left:solid transparent 0px;
+        left:-11px;
+        top:0px;
+        height:0px;
+        width:0px;
+    }
+}
+
+.wp-content{
+    @include block-left;
+    width:100%;
+    margin:20px 0 0 0;
+    padding:0 25px 0 0;
+
+    a{
+        font-size:1.0em;
+        line-height:1.0em;
+        @include custom-font();
+
+
+        &:hover{
+            text-decoration: underline;
+        }
+
+        &.tab{
+            font-size:1.4em;
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+
+    ul{
+        li{
+            font-size:1.4em;
+            line-height:1.4em;
+        }
+    }
+
+    h2,h3,h4,h5,h6{
+        color:$color3;
+        line-height:1.8em;
+        font-weight: 700;
+        font-size: 1.8em;
+        @include custom-font;
+        margin:0 50% 20px 0;
+        width:auto;
+        float:none;
+        display:inline-block;
+    }
+
+    h4{
+        font-size:1.6em;
+    }
+
+    h5{
+        font-size:1.5em;
+    }
+
+    h6{
+        font-size:1.3em;
+    }
+
+    p{
+        font-size:1.4em;
+        color:$color2;
+        line-height:1.4em;
+    }
+
+    img{
+        padding:3px;
+        @include box-shadow(0px 0px 3px 1px #ccc);
+
+    }
+
+    iframe{
+        padding:3px;
+        @include box-shadow(0px 0px 3px 1px #ccc);
+    }
+}
+
+// Styles for errors on the site
+.errors{
+
+    @include block-left;
+    width:100%;
+
+    p,
+    ul li,
+    ol li{
+        background-color:#ffbaba !important;
+        color:#e33f58 !important;
+        border:1px solid #e53e46 !important;
+        padding:10px 20px;
+        @include custom-font;
+        @include block-left;
+        width:100%;
+        font-size:1.4em;
+        font-weight: 600;
+        @include border-radius(5px);
+        margin-bottom:5px;
+    }
+
+    ol,ul{
+        @include block-left;
+        list-style-type: none;
+        @include reset-box;
+        width:100%;
+        margin:0 0 10px 0;
+    }
+
+}
+
+.valid{
+    @include block-left;
+    width:100%;
+
+    p{
+        background-color:#dff2bf !important;
+        color:#7ab985 !important;
+        border:1px solid #7ab985 !important;
+        padding:10px 20px;
+        @include custom-font;
+        @include block-left;
+        width:100%;
+        font-size:1.4em;
+        font-weight: 600;
+        @include border-radius(5px);
+        margin:0 0 10px 0;
+    }
+}
+
+// clear fix :(
+.clear{
+    clear:both;
+    line-height:0em;
+    height:0px;
+    font-size:0em;
+}
+
+.title-row{
+    h2{
+        @include block-left;
+        width:100%;
+        color:$color1;
+        font-size:2.6em;
+        font-weight: 700;
+        @include custom-font;
+        line-height:1.3em;
+        margin:0px;
+        padding:30px 0 15px 0;
+    }
+}
+
+
+// Styles for the breadcrumbs on the site
+.breadcrumbs{
+    @include block-left;
+    width:100%;
+    padding:12px 15px;
+    @include bg-gradient(#fafafa, white);
+
+    ul{
+        list-style-type: none;
+        @include reset-box;
+        @include block-left;
+        width:100%;
+
+        li{
+            @include block-left;
+            @include reset-box;
+
+            a{
+                @include block-left;
+                position:relative;
+                padding:0 20px 0 0;
+                color:$color3;
+                font-size:1.2em;
+                @include custom-font;
+                font-weight:600;
+
+                &:after{
+                    position:absolute;
+                    content:'>';
+                    color:$color3;
+                    right:6px;
+                    top:1px;
+                    display:block;
+                    speak:none;
+                }
+
+                &:hover,
+                &.active{
+                    text-decoration: none;
+                    color:$color1;
+                    outline: none;
+                }
+
+                &.active{
+                    &:after{
+                        display:none;
+                    }
+                }
+            }
+        }
+    }
+} // end of the breadcrumbs
+
+
+.sub-nav-global{
+    @include block-left;
+    width:100%;
+    margin:20px 0 0 0;
+
+    ul{
+        list-style-type:none;
+        @include reset-box;
+        @include block-left;
+        width:100%;
+
+        li{
+            @include block-left;
+            width:100%;
+            @include reset-box;
+
+            a{
+                @include block-left;
+                width:100%;
+                color:$color3;
+                font-size:1.8em;
+                font-weight: 700;
+                @include custom-font;
+                padding:12px;
+                @include bg-gradient(#fafafa, white);
+
+                &:hover,
+                &.active{
+                    color:$color5;
+                    background:none;
+                    filter:none;
+                    background-color: $color1;
+                }
+            }
+        }
+    }
+
+} // end the global sub nav
+
+
+
+
+/* LESS THAN MOBILE LANDSCAPE */
+@media only screen and (max-width: $tablet){
+    // re create grid for small screen
+     .row{
+        margin-bottom:0px;
+         @for $i from 1 through $total-columns{
+            .grid-#{$i}{
+                @include span-columns($total-columns);
+                margin-bottom:$gutter-width;
+                            
+                &.end{
+                    @include omega;
+                }
+            }
+
+        }
+
+     }
+
+     .title-row{
+        h2{
+            padding:20px 0 20px 0;
+        }
+     }
+
+    .wp-content{
+        iframe{
+            width:100%;
+            height:430px;
+        }
+    }
+
+}
+
+@media only screen and (max-width:$mobile){
+    .wp-content{
+        iframe{
+            width:100%;
+            height:290px;
+        }
+
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
+}
+

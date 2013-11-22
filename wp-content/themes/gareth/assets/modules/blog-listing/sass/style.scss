@@ -1,0 +1,198 @@
+.blog-wrap {
+	margin-bottom: 50px;
+}
+
+.blog-listing{
+
+	ul{
+		@include reset-box;
+		list-style-type: none;
+		@include block-left;
+
+		li{
+			@include block-left;
+			width:100%;
+			@include reset-box;
+
+
+			article{
+
+				@include block-left;
+				position:relative;
+				background-color:white;
+				padding:25px 0px 15px 0px;
+				width:100%;
+				border-top:1px solid #dadada;
+
+				.social{
+
+					@include no-border-box;
+					position:absolute;
+					top:20px;
+					right:0px;
+					width:215px;
+					height:20px;
+
+					*{
+						@include no-border-box;
+					}
+
+					.socialite{
+						@include block-left;
+					}
+
+					.twitter-share{
+						margin-right:10px;
+						width:80px;
+					}
+				}
+
+
+				time{
+					position:absolute;
+					top:0px;
+					left:0px;
+					background-color: $color1;
+					text-transform: uppercase;
+					color:$color5;
+					font-size:2.0em;
+					line-height:1.7em;
+					padding:0px 10px 0px 10px;
+					@include custom-font;
+					font-weight: 700;
+				}
+				header{
+					width:100%;
+					@include block-left;
+					padding:25px 0 0 0;
+
+					h2{
+						width:100%;
+						@include block-left;
+						font-size: 1.8em;
+						line-height: 1.8em;
+						font-weight: 700;
+						margin:0;
+						padding:0 0 5px 0;
+
+						a{
+							text-decoration: none;
+							color:$color3;
+
+							&:hover{
+								color:lighten($color3, 10%);
+							}
+						}
+					}
+				}
+
+				ul.tags{
+
+					width:100%;
+					@include block-left;
+					margin:0;
+					height:30px;
+
+					li{
+					 	width:auto;
+					 	font-size: 1.4em;
+					 	margin:0 5px 0 0;
+
+					 	a{
+					 		color:$color1;
+					 		text-decoration:none;
+					 		outline:none;
+					 		font-weight: 600;
+
+					 		&:hover{
+					 			color:lighten($color1, 10%);
+					 		}
+
+					 	}
+					 }
+
+				}
+
+				p{
+					display:block;
+					font-size: 1.4em;
+					@include custom-font;
+					line-height: 1.4em;
+					color:$color2;
+					font-weight:400;
+					margin:0 0 15px 0;
+				}
+
+				img{
+					@include block-left;
+					margin:0 20px 20px 0;
+				}
+
+			}
+
+
+			&.first{
+				article{
+					padding-top:15px;
+				}
+			}
+
+
+		}
+	}
+}
+
+// MEDIA QUARS
+
+
+/* LESS THAN TABLET */
+@media only screen and (max-width: $tablet){
+	.blog-listing{
+		ul{
+			li{
+				article{
+					padding:0px;
+
+					&.first{
+						padding:0px;
+					}
+
+					header{
+						padding:35px 0 0 0;
+					}
+
+					.social{
+						position:relative;
+						top:52px;
+						left:0px;
+						margin-bottom:25px;
+						width:100%;
+					}
+
+					ul.tags{
+						width:100%;
+						display:block;
+						float:left;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:$mobile){
+	.blog-listing{
+		ul{
+			li{
+				article{
+					img{
+						width:100%;
+						margin:0 0 20px 0;
+						height:auto;
+					}
+				}
+			}
+		}
+	}
+}
